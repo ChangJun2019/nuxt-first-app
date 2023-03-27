@@ -13,14 +13,17 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.37.0",
     "@nuxt/devtools": "^0.2.5",
+    "@unocss/nuxt": "^0.50.6",
     "@vue-macros/nuxt": "^1.2.7",
     "@vueuse/core": "^9.13.0",
     "@vueuse/nuxt": "^9.13.0",
+    "daisyui": "^2.51.5",
     "eslint": "^8.36.0",
     "nuxt": "^3.3.2",
     "nuxt-icon": "^0.3.3",
     "stylelint": "^15.3.0",
     "stylelint-config-standard": "^31.0.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "unocss-preset-daisy": "^3.0.1"
   }
 }

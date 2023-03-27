@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@vue-macros/nuxt',
+    '@unocss/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-icon',
