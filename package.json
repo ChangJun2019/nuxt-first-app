@@ -6,11 +6,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "cleanup": "nuxt cleanup"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.37.0",
     "eslint": "^8.36.0",
-    "nuxt": "^3.3.2"
+    "nuxt": "^3.3.2",
+    "stylelint": "^15.3.0",
+    "stylelint-config-standard": "^31.0.0"
   }
 }
