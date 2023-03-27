@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
   ],
 
+  css: [
+    '@unocss/reset/tailwind.css',
+  ],
+
   // https://vue-macros.sxzz.moe/guide/configurations.html
   macros: {},
 
