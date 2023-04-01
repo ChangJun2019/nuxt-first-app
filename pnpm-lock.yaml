@@ -11,6 +11,7 @@ specifiers:
   '@vue-macros/volar': ^0.9.4
   '@vueuse/core': ^9.13.0
   '@vueuse/nuxt': ^9.13.0
+  bcrypt-ts: ^3.0.0
   eslint: ^8.36.0
   nuxt: ^3.3.2
   nuxt-icon: ^0.3.3
@@ -18,6 +19,9 @@ specifiers:
   stylelint: ^15.3.0
   stylelint-config-standard: ^31.0.0
   typescript: ^5.0.2
+
+dependencies:
+  bcrypt-ts: 3.0.0
 
 devDependencies:
   '@antfu/eslint-config': 0.37.0_j4766f7ecgqbon3u7zlxn5zszu
@@ -2666,6 +2670,10 @@ packages:
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
+
+  /bcrypt-ts/3.0.0:
+    resolution: {integrity: sha512-z4pqdPaAuuvBsHCwb77bisxT9qo5hRSbn78FXNhhTywHabqMzcIosDxjnKUrkPQbMyz2curUT+fJRith57rIvg==}
+    dev: false
 
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
