@@ -52,30 +52,37 @@ const router = useRouter()
 const email = ref()
 const password = ref()
 const submitIsLoading = ref(false)
+const submitError = ref()
 
 const submitForm = async () => {
   const _settings = unref(settings)
-  const { data, pending } = await useFetch(`/api${_settings.api}`, {
+  const { data, pending, error } = await useFetch(`/api${_settings.api}`, {
     method: 'POST',
     body: {
       email: unref(email),
       password: unref(password),
     },
   })
-  syncRef(submitIsLoading, pending)
-  $q.notify({
-    type: 'positive',
-    message: _settings.successTip,
-    timeout: 5000,
-  })
-  useTimeoutFn(() => {
-    router.push(_settings.go)
-  }, 5500)
+  syncRef(pending, submitIsLoading)
+  syncRef(error, submitError)
+  if (data.value?.success) {
+    $q.notify({
+      type: 'positive',
+      message: _settings.successTip,
+      timeout: 5000,
+    })
+    useTimeoutFn(() => {
+      router.push(_settings.go)
+    }, 5500)
+  }
 }
 </script>
 
 <template>
   <div class="w-full max-w-sm mx-auto p-4  border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-dark-800 dark:border-gray-500">
+    <div v-if="submitError" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-dark-500 dark:text-red-500" role="alert">
+      {{ submitError.data.message }}
+    </div>
     <form class="space-y-6" action="#" @submit.prevent="submitForm">
       <h5 class="text-xl font-medium text-gray-900 dark:text-white">
         {{ settings.title }}
