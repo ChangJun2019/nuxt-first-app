@@ -2,11 +2,11 @@
 export default defineNuxtConfig({
   modules: [
     '@vue-macros/nuxt',
-    'nuxt-quasar-ui',
     '@unocss/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-icon',
+    'nuxt-quasar-ui',
     '@nuxt/devtools',
   ],
 
