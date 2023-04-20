@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@vue-macros/nuxt',
+    'nuxt-quasar-ui',
     '@unocss/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
@@ -12,6 +13,14 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
   ],
+
+  // https://nuxt.com/modules/quasar
+  quasar: {
+    plugins: [
+      'Notify',
+      'Dark',
+    ],
+  },
 
   // https://vue-macros.sxzz.moe/guide/configurations.html
   macros: {},
