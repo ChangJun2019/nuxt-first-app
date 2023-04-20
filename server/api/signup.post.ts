@@ -1,5 +1,5 @@
-import { logger } from 'nuxt/kit'
 import { hashSync } from 'bcrypt-ts'
+import { Prisma } from '@prisma/client'
 
 export default defineEventHandler(async (event) => {
   const { email, password } = await readBody(event)
@@ -10,7 +10,14 @@ export default defineEventHandler(async (event) => {
       password: hashSync(password, 8),
     },
   }).catch((err) => {
-    logger.error(err)
+    if (err instanceof Prisma.PrismaClientKnownRequestError) {
+      if (err.code === 'P2002') {
+        throw createError({
+          statusCode: 409,
+          statusMessage: 'Email already registered',
+        })
+      }
+    }
   })
 
   return {
