@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "cleanup": "nuxt cleanup"
   },
+  "dependencies": {
+    "bcrypt-ts": "^3.0.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.37.0",
     "@nuxt/devtools": "^0.2.5",
@@ -22,14 +25,11 @@
     "@vueuse/core": "^9.13.0",
     "@vueuse/nuxt": "^9.13.0",
     "eslint": "^8.36.0",
-    "nuxt": "^3.3.2",
+    "nuxt": "^3.4.1",
     "nuxt-icon": "^0.3.3",
     "prisma": "^4.12.0",
     "stylelint": "^15.3.0",
     "stylelint-config-standard": "^31.0.0",
     "typescript": "^5.0.2"
-  },
-  "dependencies": {
-    "bcrypt-ts": "^3.0.0"
   }
 }
