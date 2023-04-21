@@ -32,6 +32,10 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
+  runtimeConfig: {
+    jwtSecret: '',
+  },
+
   // https://github.com/nuxt/devtools/blob/main/packages/devtools-kit/src/_types/module-options.ts
   devtools: {
     enabled: true,
