@@ -28,6 +28,9 @@ export default defineConfig({
   ],
 
   theme: {
+    maxWidth: {
+      prose: '80ch',
+    },
     colors: {
       primary: {
         DEFAULT: '#00dd83',

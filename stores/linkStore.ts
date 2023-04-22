@@ -1,23 +1,26 @@
 import type { Link } from '@/types/link'
 
 interface LinksState {
-  links: Link[] | null
+  links: Link[] | []
 }
 
 export const useLinkStore = defineStore('links', {
   state: (): LinksState => {
     return {
-      links: null,
+      links: [],
     }
   },
 
   getters: {
-    getLinks(): Link[] | null {
+    getLinks(): Link[] | [] {
       return this.links
     },
   },
 
   actions: {
-
+    async fetchAllLinks() {
+      const { data } = useFetch('/api/links')
+      this.links = data.value || []
+    },
   },
 })

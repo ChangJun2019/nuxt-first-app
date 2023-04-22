@@ -1,12 +1,12 @@
-<script lang="ts" setup>
-definePageMeta({
-  middleware: ['auth'],
-})
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div>
-    Page: foo
+  <div w-full py-10>
+    <div class="flex text-3xl py-4 justify-between">
+      <span>Lists</span>
+      <Icon name="material-symbols:format-list-bulleted-rounded" />
+    </div>
+    <LinkList />
   </div>
 </template>
 
