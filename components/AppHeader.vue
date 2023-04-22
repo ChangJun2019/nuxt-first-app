@@ -2,8 +2,6 @@
 import { useUserStore } from '~/stores/userStore'
 
 const appConfig = useAppConfig()
-const userStore = useUserStore()
-await userStore.fetchUser()
 const user = computed(() => useUserStore().getUser)
 </script>
 
@@ -15,25 +13,24 @@ const user = computed(() => useUserStore().getUser)
         <span ml-3 self-center text-xl font-semibold whitespace-nowrap>{{ appConfig.name }}</span>
       </a>
       <ul flex flex-col p-4 mt-4 md:flex-row md:space-x-8>
-        <li v-if="!user" class="block py-2 pl-3 pr-4 link">
-          <NuxtLink to="/login">
-            sign in
-          </NuxtLink>
-        </li>
+        <NuxtLink btn-icon to="/">
+          <Icon name="material-symbols:other-houses-outline" />
+        </NuxtLink>
+        <NuxtLink v-if="!user" btn-icon to="/login">
+          <Icon name="material-symbols:login" />
+        </NuxtLink>
         <template v-else>
-          <li class="block py-2 pl-3 pr-4">
-            <NuxtLink to="/link/create">
-              create
-            </NuxtLink>
-          </li>
-          <li class="block py-2 pl-3 pr-4">
+          <NuxtLink btn-icon to="/link/create">
+            <Icon name="material-symbols:add-circle-outline-rounded" />
+          </NuxtLink>
+          <!-- <li class="block py-2 pl-3 pr-4">
             <NuxtLink to="#">
               {{ user.email }}
             </NuxtLink>
-          </li>
-          <li class="block py-2 pl-3 pr-4 link" @click="userStore.logout">
+          </li> -->
+          <!-- <li class="block py-2 pl-3 pr-4 link" @click="userStore.logout">
             <span>logout</span>
-          </li>
+          </li> -->
         </template>
         <ToggleTheme />
       </ul>
