@@ -67,7 +67,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div class="w-full max-w-sm mx-auto p-4  border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-dark-800 dark:border-gray-500">
+  <div class="my-24 w-full max-w-sm mx-auto p-4  border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-dark-800 dark:border-gray-500">
     <form class="space-y-6" action="#" @submit.prevent="submitForm">
       <h5 class="text-xl font-medium text-gray-900 dark:text-white">
         {{ mode }} link
