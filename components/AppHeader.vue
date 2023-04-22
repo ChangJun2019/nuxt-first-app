@@ -21,6 +21,11 @@ const user = computed(() => useUserStore().getUser)
         </li>
         <template v-else>
           <li class="block py-2 pl-3 pr-4">
+            <NuxtLink to="/link/create">
+              create
+            </NuxtLink>
+          </li>
+          <li class="block py-2 pl-3 pr-4">
             <NuxtLink to="#">
               {{ user.email }}
             </NuxtLink>
