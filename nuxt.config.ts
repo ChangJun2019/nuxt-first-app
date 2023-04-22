@@ -4,10 +4,17 @@ export default defineNuxtConfig({
     '@vue-macros/nuxt',
     '@unocss/nuxt',
     '@vueuse/nuxt',
-    '@pinia/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-icon',
     'nuxt-quasar-ui',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: [
+          'defineStore',
+        ],
+      },
+    ],
     '@nuxt/devtools',
   ],
 

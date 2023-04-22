@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import { useUserStore } from '~/stores/userStore'
+
 const appConfig = useAppConfig()
+const user = useUserStore().getUser
 </script>
 
 <template>
@@ -12,6 +15,16 @@ const appConfig = useAppConfig()
       <ul flex flex-col p-4 mt-4 md:flex-row md:space-x-8>
         <li>
           <a href="#" class="block py-2 pl-3 pr-4">Home</a>
+        </li>
+        <li v-if="!user">
+          <NuxtLink class="block py-2 pl-3 pr-4 link" to="/login">
+            sign in
+          </NuxtLink>
+        </li>
+        <li v-else>
+          <NuxtLink class="block py-2 pl-3 pr-4" to="#">
+            {{ user.email }}
+          </NuxtLink>
         </li>
         <ToggleTheme />
       </ul>
