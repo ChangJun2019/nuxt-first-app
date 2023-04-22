@@ -60,6 +60,7 @@ const submitForm = async () => {
     $q.notify({
       type: 'positive',
       message: `${mode.value} successfully`,
+      position: 'top',
       timeout: 5000,
     })
   }

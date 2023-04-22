@@ -28,6 +28,9 @@ export default defineNuxtConfig({
       'Notify',
       'Dark',
     ],
+    extras: {
+      fontIcons: ['material-icons'],
+    },
   },
 
   // https://vue-macros.sxzz.moe/guide/configurations.html

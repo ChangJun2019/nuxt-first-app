@@ -72,6 +72,7 @@ const submitForm = async () => {
       type: 'positive',
       message: _settings.successTip,
       timeout: 5000,
+      position: 'top',
     })
   }
 }
