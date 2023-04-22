@@ -4,5 +4,5 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   const store = useUserStore()
   const user = await store.fetchUser()
   if (!user)
-    return navigateTo('/sign-up')
+    return navigateTo('/login')
 })

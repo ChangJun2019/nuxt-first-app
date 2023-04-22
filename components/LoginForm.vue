@@ -47,7 +47,6 @@ const settings = computed(() => {
 })
 
 const $q = useQuasar()
-const router = useRouter()
 
 const email = ref()
 const password = ref()
@@ -66,14 +65,14 @@ const submitForm = async () => {
   syncRef(pending, submitIsLoading)
   syncRef(error, submitError)
   if (data.value?.success) {
+    useTimeoutFn(() => {
+      navigateTo(_settings.go)
+    }, 5500)
     $q.notify({
       type: 'positive',
       message: _settings.successTip,
       timeout: 5000,
     })
-    useTimeoutFn(() => {
-      router.push(_settings.go)
-    }, 5500)
   }
 }
 </script>

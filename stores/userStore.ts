@@ -27,5 +27,17 @@ export const useUserStore = defineStore('user', {
       this.user = user.value
       return this.user
     },
+
+    async logout() {
+      const router = useRouter()
+      const cookieHeaders = useRequestHeaders(['cookie'])
+      const { data } = await useFetch('/api/logout', {
+        method: 'GET',
+        headers: cookieHeaders as HeadersInit,
+      })
+      this.user = null
+      if (data.value?.success)
+        router.replace('/login')
+    },
   },
 })
