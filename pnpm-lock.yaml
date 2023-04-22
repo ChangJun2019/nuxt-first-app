@@ -54,6 +54,9 @@ devDependencies:
   '@vueuse/nuxt':
     specifier: ^9.13.0
     version: 9.13.0(nuxt@3.4.1)(vue@3.2.47)
+  '@vueuse/router':
+    specifier: ^10.1.0
+    version: 10.1.0(vue-router@4.1.6)(vue@3.2.47)
   consola:
     specifier: ^3.1.0
     version: 3.1.0
@@ -2418,6 +2421,28 @@ packages:
       - '@vue/composition-api'
       - rollup
       - supports-color
+      - vue
+    dev: true
+
+  /@vueuse/router@10.1.0(vue-router@4.1.6)(vue@3.2.47):
+    resolution: {integrity: sha512-v9rQNld/8EwG7EPpkkwrj+tVeNFliupHdymREbyj0CJBeRIL82KEQyC+k+dbZhDxKihA0NtNC54+Qi8pC8Dtiw==}
+    peerDependencies:
+      vue-router: '>=4.0.0-rc.1'
+    dependencies:
+      '@vueuse/shared': 10.1.0(vue@3.2.47)
+      vue-demi: 0.14.0(vue@3.2.47)
+      vue-router: 4.1.6(vue@3.2.47)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
+
+  /@vueuse/shared@10.1.0(vue@3.2.47):
+    resolution: {integrity: sha512-2X52ogu12i9DkKOQ01yeb/BKg9UO87RNnpm5sXkQvyORlbq8ONS5l39MYkjkeVWWjdT0teJru7a2S41dmHmqjQ==}
+    dependencies:
+      vue-demi: 0.14.0(vue@3.2.47)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
       - vue
     dev: true
 

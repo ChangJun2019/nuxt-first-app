@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useRouteQuery } from '@vueuse/router'
 import type { Link } from '@/types/link'
 
 definePageMeta({
@@ -15,10 +16,30 @@ const mode = computed(() => {
 const $q = useQuasar()
 const url = ref('')
 const title = ref('')
+const editId = ref()
+
+const getEditFetch = async () => {
+  editId.value = useRouteQuery('id').value
+  const { data: link } = await useFetch(`/api/post/${editId.value}`)
+  if (link.value) {
+    title.value = link.value.title
+    url.value = link.value.url
+  }
+}
+
+if (mode.value === 'edit')
+  await getEditFetch()
 
 const createFetch = async (params: Link) => {
   return await useFetch('/api/post', {
     method: 'POST',
+    body: params,
+  })
+}
+
+const editFetch = async (params: Link) => {
+  return await useFetch(`/api/post/${editId.value}`, {
+    method: 'PUT',
     body: params,
   })
 }
@@ -29,9 +50,8 @@ const submitForm = async () => {
     url: unref(url),
     title: unref(title),
   }
-  const postId = 1
 
-  const { data } = await createFetch(params)
+  const { data } = isEdit ? await editFetch(params) : await createFetch(params) as any
 
   if (data.value?.success) {
     useTimeoutFn(() => {

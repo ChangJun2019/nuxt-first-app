@@ -2,11 +2,19 @@
 import { useLinkStore } from '~/stores/linkStore'
 import { useUserStore } from '~/stores/userStore'
 
-const linkStore = useLinkStore()
-await linkStore.fetchAllLinks()
+await useLinkStore().fetchAllLinks()
 
-const links = computed(() => linkStore.getLinks)
+const links = computed(() => useLinkStore().getLinks)
 const user = computed(() => useUserStore().getUser)
+
+const toEdit = (id: number) => {
+  navigateTo({
+    path: '/link/edit',
+    query: {
+      id,
+    },
+  })
+}
 </script>
 
 <template>
@@ -17,7 +25,7 @@ const user = computed(() => useUserStore().getUser)
           {{ index + 1 }}. {{ item.title }}
         </p>
         <div v-if="user && user?.id === item.authorId" class="text-3xl space-x-3">
-          <Icon name="material-symbols:edit-note" class="hover:text-green-500" />
+          <Icon name="material-symbols:edit-note" class="hover:text-green-500" @click.prevent="toEdit(item.id!)" />
           <Icon name="ic:outline-delete-sweep" class="hover:text-green-500" />
         </div>
       </div>

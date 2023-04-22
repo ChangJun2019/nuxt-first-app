@@ -19,7 +19,7 @@ export const useLinkStore = defineStore('links', {
 
   actions: {
     async fetchAllLinks() {
-      const { data } = useFetch('/api/links')
+      const { data } = await useFetch('/api/links') as any
       this.links = data.value || []
     },
   },

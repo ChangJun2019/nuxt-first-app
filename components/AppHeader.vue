@@ -3,6 +3,7 @@ import { useUserStore } from '~/stores/userStore'
 
 const appConfig = useAppConfig()
 const userStore = useUserStore()
+await userStore.fetchUser()
 const user = computed(() => useUserStore().getUser)
 </script>
 
