@@ -14,6 +14,7 @@ export async function getUserFromToken(event: H3Event): Promise<User | null> {
         email: payload.email,
       },
       select: {
+        id: true,
         email: true,
         createdAt: true,
         password: false,
