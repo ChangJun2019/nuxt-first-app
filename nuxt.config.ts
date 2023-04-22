@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   // https://nuxt.com/modules/quasar
   quasar: {
     plugins: [
+      'Dialog',
       'Notify',
       'Dark',
     ],
