@@ -13,7 +13,7 @@ export default eventHandler(async (event) => {
 })
 
 async function hasOpenAuthRoute(event: H3Event): Promise<boolean> {
-  const whiteList = ['/api/user', '/api/logout', '/api/post/', '/api/links']
+  const whiteList = ['/', '/api/user', '/api/logout', '/api/post/', '/api/links']
   if (whiteList.some(route => event.path?.startsWith(route))) {
     return true
   }
